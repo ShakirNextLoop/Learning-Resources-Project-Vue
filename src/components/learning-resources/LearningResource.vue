@@ -5,7 +5,7 @@
                 <h3>
                     {{title}}
                 </h3>
-                <base-button mode="flat">Delete</base-button>
+                <base-button mode="flat" @click="removeResource(id)">Delete</base-button>
             </header>
         
         <p>{{ description }}</p>
@@ -21,7 +21,8 @@ import BaseButton from '../UI/BaseButton.vue'
 
 export default {
   components: { BaseButton },
-    props: ['title', 'description', 'link']
+    props: ['id','title', 'description', 'link'],
+    inject:['removeResource']
 }
 
 </script>
